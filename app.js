@@ -2,8 +2,11 @@ require('dotenv').config();
 
 const express = require('express');
 const expressLayout = require('express-ejs-layouts');
+<<<<<<< HEAD
 const { flash } = require('express-flash-message');
 const session = require('express-session');
+=======
+>>>>>>> parent of ea8c06c (tentativa de correção do flash)
 const connectDB = require('./server/config/db');
 
 const app = express();
@@ -17,21 +20,6 @@ app.use(express.json());
 
 // Static Files
 app.use(express.static('public'));
-
-// Express Session
-app.use(
-    session({
-        secret: 'secret',
-        resave: false,
-        saveUninitialized: true,
-        cookie: {
-            maxAge: 1000 * 60 * 60 * 24 * 7, // 1 week
-        }
-    })
-);
-
-// Flash Messages
-app.use(flash({ sessionKeyName: 'flashMessage' }));
 
 // Templating Engine
 app.use(expressLayout);
