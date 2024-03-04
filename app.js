@@ -2,11 +2,8 @@ require('dotenv').config();
 
 const express = require('express');
 const expressLayout = require('express-ejs-layouts');
-<<<<<<< HEAD
 const { flash } = require('express-flash-message');
 const session = require('express-session');
-=======
->>>>>>> parent of ea8c06c (tentativa de correção do flash)
 const connectDB = require('./server/config/db');
 
 const app = express();
