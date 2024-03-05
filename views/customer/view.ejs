@@ -20,8 +20,55 @@
             </nav>
         </div>
         <div class="col text-end fw-lighter">
-            <b>Última atualização: <%= new Date(customer.updatedAt).toLocaleString('pt-BR', {timeZone: 'America/Sao_Paulo'}) %></b>
+            <b>Última atualização: <%= new Date(customer.updatedAt).toLocaleString('pt-BR', {timeZone: 'America/Sao_Paulo'}) %> </b>
+        </div>
+        <div class="col text-end fw-lighter">
+            <b>UserId:</b> <%= customer._id %>
         </div>
     </div>
 
 </div>
+
+<ul class="list-group">
+    <li class="list-group-item">
+        <div class="row">
+            <div class="col" style="max-width: 140px"> <b>Nome:</b></div>
+            <div class="col"><%= customer.firstName %> <%= customer.lastName %></div>
+        </div>
+    </li>
+
+    <li class="list-group-item">
+        <div class="row">
+            <div class="col" style="max-width: 140px"> <b>Tel:</b></div>
+            <div class="col"><%= customer.tel %></div>
+        </div>
+    </li>
+
+    <li class="list-group-item">
+        <div class="row">
+            <div class="col" style="max-width: 140px"> <b>Email:</b></div>
+            <div class="col"><%= customer.email %></div>
+        </div>
+    </li>
+
+    <li class="list-group-item">
+        <div class="row">
+            <div class="col" style="max-width: 140px"> <b>Detalhes:</b></div>
+            <div class="col"><%= customer.details %></div>
+        </div>
+    </li>
+
+    <li class="list-group-item">
+        <div class="row">
+            <div class="col" style="max-width: 140px"> <b>Criado em:</b></div>
+            <div class="col"><%= new Date(customer.createdAt).toLocaleString('pt-BR', {timeZone: 'America/Sao_Paulo'}) %></div>
+        </div>
+    </li>
+
+    <li class="list-group-item">
+        <div class="row">
+            <div class="col" style="max-width: 140px"> <b>Atualizado em:</b></div>
+            <div class="col"><%= new Date(customer.updatedAt).toLocaleString('pt-BR', {timeZone: 'America/Sao_Paulo'}) %></div>
+        </div>
+    </li>
+</ul>
