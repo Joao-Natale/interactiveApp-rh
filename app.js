@@ -6,6 +6,8 @@ const methodOverride = require('method-override');
 const flash = require('express-flash');
 const session = require('express-session');
 const connectDB = require('./server/config/db');
+const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
 
 const app = express();
 const port = process.env.PORT || 5000;

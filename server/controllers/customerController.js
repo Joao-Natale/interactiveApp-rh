@@ -65,6 +65,38 @@ exports.homepage = async (req, res) => {
 
 }
 
+exports.admin = async (req, res) => {
+    const messages = req.flash('info');
+    const locals = {
+            title: 'InteractiveApp-Admin',
+            description: 'Sistema de gerenciamento de funcionários'
+        };
+
+        let perPage = 10;
+        let page = req.query.page || 1;
+
+        try {
+            const customers = await Customer.aggregate([ { $sort: { updatedAt: -1 } } ])
+                .skip(perPage * page - perPage)
+                .limit(perPage)
+                .exec();
+                const count = await Customer.countDocuments();
+
+            res.render('admin', {
+                locals,
+                customers,
+                current: page,
+                pages: Math.ceil(count / perPage),
+                messages
+            });
+
+
+        } catch (error) {
+            console.log(error);
+        }
+
+}
+
 exports.addCustomer = async (req, res) => {
     const locals = {
             title: 'Adicionar Novo Funcionário',
