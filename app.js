@@ -12,8 +12,34 @@ const jwt = require('jsonwebtoken');
 const app = express();
 const port = process.env.PORT || 5000;
 
+// Config JSON response
+app.use(express.json())
+
+// Models
+const User = require('./server/models/User');
+
 // Connect to Database
 connectDB();
+
+// Register User
+app.post('/auth/register', async(req, res) => {
+
+    const {name, email, password, confirmpassword} = req.body
+
+    // validations
+    if(!name) {
+        return res.status(422).json({msg: 'O nome é obrigatório' })
+    }
+
+    if(!email) {
+        return res.status(422).json({msg: 'O email é obrigatório' })
+    }
+
+    if(!password) {
+        return res.status(422).json({msg: 'A senha é obrigatória' })
+    }
+
+})
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
