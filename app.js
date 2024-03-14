@@ -1,5 +1,6 @@
 require('dotenv').config();
 
+const pasth = require('path');
 const express = require('express');
 const expressLayout = require('express-ejs-layouts');
 const methodOverride = require('method-override');
@@ -21,7 +22,7 @@ const { restart } = require('nodemon');
 
 // Connect to Database
 connectDB();
-
+/*
 // Login User
 app.post('/auth/login', async (req, res) => {
     const { email, password } = req.body
@@ -155,7 +156,7 @@ app.post('/auth/register', async(req, res) => {
        console.log(error)
        res.status(500).json({msg: 'Aconteceu um erro no servidor, tente novamente mais tarde!'}) 
     }
-})
+})*/
 
 
 
