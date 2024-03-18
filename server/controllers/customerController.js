@@ -3,6 +3,11 @@
 const Customer = require('../models/Customer');
 const mongoose = require('mongoose');
 
+
+exports.loginPage = (req, res) => {
+    res.render('login');
+};
+
 exports.homepage = async (req, res) => {
     const messages = req.flash('info');
     const locals = {
