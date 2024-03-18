@@ -6,7 +6,7 @@ const costumerController = require('../controllers/customerController');
     Costumer Routes
 */
 
-router.get('/', costumerController.homepage);
+router.get('/home', costumerController.homepage);
 router.get('/about', costumerController.about);
 router.get('/admin', costumerController.admin);
 

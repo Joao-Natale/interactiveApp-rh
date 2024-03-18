@@ -20,7 +20,7 @@ exports.homepage = async (req, res) => {
                 .exec();
                 const count = await Customer.countDocuments();
 
-            res.render('index', {
+            res.render('home', {
                 locals,
                 customers,
                 current: page,
